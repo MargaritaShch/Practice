@@ -398,3 +398,85 @@ function findTheCapitals(string){
 }
 console.log(findTheCapitals("CodEWaRs"));//RESULT = [0, 3, 4, 6] - DONE
 
+/*23.Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+Notes
+Array size is at least 1.*/
+function rowWeights(arr){
+  let sum1 = 0;
+  let sum2=0;
+  for(let  i = 0; i< arr.length; i++){
+    if(i % 2 == 0){
+      sum1+=arr[i];
+    } else{
+      sum2+=arr[i]
+    }
+  }
+  return [sum1,sum2];
+}
+
+console.log(rowWeights([50, 60, 70, 80]));//RESULT =  [120, 140]-DONE
+console.log(rowWeights([13, 27, 49]));//RESULT =  [62, 27] -
+
+/*24.You will be given a number and you will need to return it as a string in Expanded Form. For example:
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'
+NOTE: All numbers will be whole numbers greater than 0. */
+
+function expandedForm(num){
+  let a = 0
+  let b =0;
+  let c =0
+  let str = num.toString()
+  let newStr =str.split('')
+  if(newStr[0]<100){
+    a = newStr[0]*10;
+    b = newStr.length
+    result = `${a}+${b}`;
+  } 
+  // else if (newStr[0] < 1000) {
+  //   a = newStr[0]*1000
+  //   b=newStr[2]*100;
+  //   c =newStr.length
+  //   result = `${a}+${b}+${c}`
+  // }
+    return result;
+}
+
+console.log(expandedForm(12));//RESULT = 10+2 - DONE
+console.log(expandedForm(42));//RESULT = 40 + 2' - DONE
+console.log(expandedForm(70304))//RESULT = ???(70+5)
+
+/*24.Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+Rules for a smiling face:
+
+Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+Every smiling face must have a smiling mouth that should be marked with either ) or D
+No additional characters are allowed except for those mentioned.
+
+Valid smiley face examples: :) :D ;-D :~)
+Invalid smiley faces: ;( :> :} :] */
+
+function countSmileys(arr){
+ let count=0;
+ for(let i = 0; i< arr.length; i++){
+  let smileFace = arr[i];
+  if(
+    (smileFace.length===2 && 
+      ((smileFace[0]===';'|| smileFace[0]===':') && (smileFace[1]==='D'|| smileFace[1]===')')))
+    || 
+    (smileFace.length===3 && 
+      ((smileFace[0]===';'|| smileFace[0]===':') && (smileFace[1]==='-'|| smileFace[1]==='~') && (smileFace[2]==='D'|| smileFace[2]===')')) 
+  )){
+      count++
+    }
+  }
+  return count;
+}
+console.log(countSmileys([":)", ";(", ";}", ":-D"]));// RESULT = 2 - DONE
+console.log(countSmileys([';D', ':-(', ':-)', ';~)']))//RESULT = 3 - DONE
+
+
+
