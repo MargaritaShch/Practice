@@ -137,24 +137,6 @@ function solution(string1, string2){
 console.log(solution("abc", "bc")); //RESULT = true - DONE;
 console.log(solution("abc", "d"));//RESULT = false - DONE
 
-/*7.Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9) и возвращает строку этих чисел в виде номера телефона. Чтобы выполнить эту задачу, возвращаемый формат должен быть правильным.
-Не забудьте пробел после закрывающих скобок */
-
-function createPhoneNumber(arr){
-  //вырезать с 1 по 3 эл-т(включительно)
-  let area = arr.slice(0, 3).join("");
-  //вырезать с 4 по 6 эл-т(включительно)
-  let first = arr.slice(3, 6).join("");
-  //вырезать с 7 по 10 эл-т(включительно)
-  let second = arr.slice(6, 10).join("");
-
-  let number = `(${area}) ${first}-${second}`;
-  return number;
-}
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));//RESULT = (123) 456-7890 - DONE
-console.log(createPhoneNumber([9, 9, 5, 5, 7, 8, 2, 6, 9, 0]));//RESULT =(995) 578-2690 - DONE
-
-
 /*8.Учитывая два целых числа a и b, которые могут быть положительными или отрицательными, найдите сумму всех целых чисел между ними и включая их и верните ее. Если два числа равны, верните a или b. */
 function sumNums(a,b){
     if(a===b){
@@ -478,5 +460,128 @@ function countSmileys(arr){
 console.log(countSmileys([":)", ";(", ";}", ":-D"]));// RESULT = 2 - DONE
 console.log(countSmileys([';D', ':-(', ':-)', ';~)']))//RESULT = 3 - DONE
 
+/*25.Given a number as a parameter (between 2 and 30), return an array containing strings which form a box.
+Like this:n = 5
+[
+  '-----',
+  '-   -',
+  '-   -',
+  '-   -',
+  '-----'
+] */
 
 
+  function sugarBox(num){
+    if(num<2 || num>30){
+      return null
+    }
+
+    let box =[]
+
+    for(let i = 0; i<num; i++){
+      let row = ''
+      for(let k=0; k<num; k++){
+        if(k==0 || k ==num-1 || i==0 || i ==num-1){
+          row +='-'
+        } else{
+          row += " ";
+        }
+      }
+      box.push(row)
+  }
+  return box
+}
+const box = sugarBox(7);
+console.log(box);
+
+/*26.Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9) и возвращает строку этих чисел в виде номера телефона. Чтобы выполнить эту задачу, возвращаемый формат должен быть правильным.
+Не забудьте пробел после закрывающих скобок */
+
+function createPhoneNumber(arr){
+  //вырезать с 1 по 3 эл-т(включительно)
+  let area = arr.slice(0, 3).join("");
+  //вырезать с 4 по 6 эл-т(включительно)
+  let first = arr.slice(3, 6).join("");
+  //вырезать с 7 по 10 эл-т(включительно)
+  let second = arr.slice(6, 10).join("");
+
+  let number = `(${area}) ${first}-${second}`;
+  return number;
+}
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));//RESULT = (123) 456-7890 - DONE
+console.log(createPhoneNumber([9, 9, 5, 5, 7, 8, 2, 6, 9, 0]));//RESULT =(995) 578-2690 - DONE
+
+/*27. Для каждой цифры в числе n вычисляется сумма этой цифры, возведенной в степень (p + i), где i - позиция цифры в числе (начиная с 0). Затем суммируются все эти результаты. Если эта сумма равна n * k, где k - целое число, то k является искомым значением и должно быть возвращено. Если такого k не существует, возвращается -1.
+Например, для числа n = 695 и p = 2:
+a = 6, b = 9, c = 5
+сумма = 6^2 + 9^3 + 5^4 = 1390
+проверяем, есть ли такое k, что 1390 = 695 * k, и находим k.
+Задача состоит в том, чтобы найти такое k для заданных n и p или вернуть -1, если такого k не существует. */
+function digPow(num, pow){
+  let str=num.toString();
+  let sum =0;
+
+  for(let i=0; i<str.length;i++){
+    sum += Math.pow(parseInt(str[i]),pow+i)
+  }
+
+  let k = sum/num
+  return Number.isInteger(k) ? k : -1
+  
+
+}
+
+console.log(digPow(89, 1));//result =1 -DONE
+console.log(digPow(92, 1));//result = -1 - DONE;
+console.log(digPow(695, 2));//result =2 -DONE
+
+//28.Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
+
+function min(arr, str){
+  let minValue =0
+  let minIndex =0
+  if(str === 'value'){
+    for(let i=0;i<arr.length;i++){
+      minValue = Math.min(arr[i])
+      return minValue
+    }
+  
+    if (str === "index") {
+      minIndex = arr.indexOf(minValue)
+      
+    }
+  }
+  return minValue;
+}
+
+console.log(min([1, 2, 3, 4, 5], "value"));
+console.log(min([1, 2, 3, 4, 5], "index"));
+
+/*29.Given a two-dimensional array, return a new array which carries over only those arrays from the original, which were not empty and whose items are all of the same type (i.e. homogenous). For simplicity, the arrays inside the array will only contain characters and integers.
+Example:
+Given [[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]], your function should return [[1, 5, 4], ['b']].
+Addendum:
+Please keep in mind that for this kata, we assume that empty arrays are not homogenous.
+The resultant arrays should be in the order they were originally in and should not have its values changed.
+No implicit type casting is allowed. A subarray [1, '2'] would be considered illegal and should be filtered out.*/
+
+function homogenousArrays(arr){
+  let newArr =[]
+  for(let i=0; i<arr.length; i++){
+    let checking = true;
+    let type = typeof arr[i][0]
+
+    for(let k=1; k<arr[i].length; k++){
+      if(typeof arr[i][k] !== type){
+        checking = false
+        break
+      }
+    }
+    if(arr[i].length>0 && checking){
+       newArr.push(arr[i]);
+    }
+  }  
+  return newArr
+}
+
+console.log(homogenousArrays([[1, 5, 4], ["a", 3, 5], ["b"], [], ["1", 2, 3]]));
