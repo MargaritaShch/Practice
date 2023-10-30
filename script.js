@@ -1,3 +1,4 @@
+//ARRAYS
 /* 1.Вам будет предоставлен список строк. Вы должны отсортировать его в алфавитном порядке (с учетом регистра и на основе значений символов ASCII), а затем вернуть первое значение.Возвращаемое значение должно быть строкой и содержать «***» между каждой буквой.Не следует удалять или добавлять элементы из/в массив.*/
 function sortString(strings){
     //отсортировать его в алфавитном порядке
@@ -221,36 +222,8 @@ console.log(getDescendingOrder(42145));//RESULT = 54421 - DONE
 console.log(getDescendingOrder(145263));//RESULT = 654321 - DONE
 console.log(getDescendingOrder(123456789));//RESULT = 987654321 - DONE
 
-/*13.Цель этого упражнения — преобразовать строку в новую строку, где каждый символ в новой строке равен «(», если этот символ встречается в исходной строке только один раз, или «)», если этот символ встречается в исходной строке более одного раза. нить. Игнорируйте заглавные буквы при определении того, является ли символ дубликатом.
-Пример:
- "din"      =>  "((("
-"recede"   =>  "()()()"
-"Success"  =>  ")())())"
-"(( @"     =>  "))((" */
-function getDuplicateEncoder(string){
-  //игнорирование регистра по условиям(перевод всех букв в нижний регистр)
-  let lowerCaseString = string.toLowerCase();
-  let out = "";
-  //для отслеживания символов, которые уже встречались в строке.Объект seen в данной функции когда встречается  новый символ в строке, добавляем его в объект seen в качестве ключа, устанавливая его значение в true. Если встречается тот же символ впоследствии, то проверяем объект seen и видим, что ключ (символ) уже существует в нем.
-  let seen = {};
-  for (let i = 0; i < lowerCaseString.length; i++) {
-    let curChar = lowerCaseString[i];
-    //если нет повторяющихся
-    if (seen[curChar]) {
-      out += ")";
-    } 
-    //есть повторяющиеся
-    else {
-      out += "(";
-      seen[curChar] = true;
-    }
-  }
-  return out;
-}
-console.log(getDuplicateEncoder("din"));//RESULT = ((( - DONE
-console.log(getDuplicateEncoder("recede"));//RESULT = ((()() -???
 
-/*14.Создайте программу, которая фильтрует список строк и возвращает список, содержащий только имена ваших друзей.Если в имени ровно 4 буквы, можете быть уверены, что это ваш друг! В противном случае, вы можете быть уверены, что он не ваш друг.
+/*13.Создайте программу, которая фильтрует список строк и возвращает список, содержащий только имена ваших друзей.Если в имени ровно 4 буквы, можете быть уверены, что это ваш друг! В противном случае, вы можете быть уверены, что он не ваш друг.
 Пример:
 friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"] */
 function findFriend(arr){
@@ -266,7 +239,7 @@ function findFriend(arr){
 console.log(findFriend(["Ryan", "Kieran", "Mark"]));//RESULT = ['Ryan', 'Mark'] - DONE
 console.log(findFriend(["Ryan", "Kieran", "Jason", "Yous"]));//RESULT = ['Ryan', 'Yous'] - DONE
 
-/*15.Тролли атакуют ваш раздел комментариев!
+/*14.Тролли атакуют ваш раздел комментариев!
 Распространенный способ справиться с этой ситуацией — удалить все гласные из комментариев троллей, нейтрализуя угрозу.Ваша задача — написать функцию, которая принимает строку и возвращает новую строку, из которой удалены все гласные.Например, строка «Этот сайт для неудачников LOL!» станет «Ths wbst s fr lsrs LL!».
 Примечание: в этой ката y не считается гласной. */
 function disemvowelTrolls(string){
@@ -281,7 +254,7 @@ function disemvowelTrolls(string){
 console.log(disemvowelTrolls("This website is for losers LOL!"));//как перебрать гласные?
 
 //ПО ПЛАНУ:
-/*16.Вы получаете массив чисел, возвращаете сумму всех положительных чисел. */
+/*15.Вы получаете массив чисел, возвращаете сумму всех положительных чисел. */
 function getSumOfPositive(arr){
     let sum = 0;
     for(let i =0; i<arr.length;i++){
@@ -298,7 +271,7 @@ function getSumOfPositive(arr){
 console.log(getSumOfPositive([1, -4, 7]));//RESULT = 8 - DONE
 console.log(getSumOfPositive([0, 0, 0, 0]));//RESULT = 0 - DONE;
 
- /*17.Просто, учитывая строку слов, верните длину самого короткого слова (слов).Строка никогда не будет пустой, и вам не нужно учитывать разные типы данных.*/
+ /*16.Просто, учитывая строку слов, верните длину самого короткого слова (слов).Строка никогда не будет пустой, и вам не нужно учитывать разные типы данных.*/
 function getShortWord(string){
  let arr = string.split(' ')
  //сравниваем все с первым словом
@@ -311,7 +284,7 @@ function getShortWord(string){
 }
 console.log(getShortWord("String will never be empty"));//RESULT = 'be' - DONE
 
-/*18.В этом ката вы создадите функцию, которая принимает список неотрицательных целых чисел и строк и возвращает новый список с отфильтрованными строками.*/
+/*17.В этом ката вы создадите функцию, которая принимает список неотрицательных целых чисел и строк и возвращает новый список с отфильтрованными строками.*/
 function filterList(arr){
   let newArr =[]
   for(let i = 0; i<arr.length; i++)
@@ -324,7 +297,7 @@ console.log(filterList([1, 2, "a", "b"]));//RESULT =  [1, 2] - DONE
 console.log(filterList([1, "a", "b", 0, 15]));//RESULT = [1, 0, 15]- DONE
 console.log(filterList([1, 2, "aasf", "1", "123", 123]));//RESULT = [1, 2, 123] - DONE
 
-/*19.Я дам вам целое число. Верните мне фигуру такой же длины и ширины, как целое число. Целое число будет целым числом от 1 до 50.*/
+/*18.Я дам вам целое число. Верните мне фигуру такой же длины и ширины, как целое число. Целое число будет целым числом от 1 до 50.*/
 let out = document.querySelector('.out')
 function getBuildSquad(num){
  for (i = 1; i <= num; i++) {
@@ -337,7 +310,7 @@ function getBuildSquad(num){
 
 console.log(getBuildSquad(5));// - DONE
 console.log(getBuildSquad(10));// - DONE
-/*20.Возвращает количество гласных в заданной строке.Гласными для этой Ката мы будем считать a, e, i, o, u (но не y).Входная строка будет состоять только из строчных букв и/или пробелов.*/
+/*19.Возвращает количество гласных в заданной строке.Гласными для этой Ката мы будем считать a, e, i, o, u (но не y).Входная строка будет состоять только из строчных букв и/или пробелов.*/
 function vowelCount(string){
   let newString = 0;
   for (let i = 0; i < string.length; i++) {
@@ -358,7 +331,7 @@ function vowelCount(string){
 let string11 ='hello world'
 console.log(vowelCount(string11));//RESULT = 3 - DONE
 
-/*21.Ваша цель в этом ката — реализовать функцию разности, которая вычитает один список из другого и возвращает результат.Он должен удалить все значения из списка a, которые присутствуют в списке b, сохраняя их порядок.*/
+/*20.Ваша цель в этом ката — реализовать функцию разности, которая вычитает один список из другого и возвращает результат.Он должен удалить все значения из списка a, которые присутствуют в списке b, сохраняя их порядок.*/
 function getArrayDiff(arr1, arr2){
   let newArr = arr1.filter((elem)=> !arr2.includes(elem));
   return newArr;
@@ -367,7 +340,7 @@ function getArrayDiff(arr1, arr2){
 console.log(getArrayDiff([1, 2], [1]));//RESULT = [2] - DONE
 console.log(getArrayDiff([1, 2, 2, 2, 3], [2]));//RESULT = [1,3] - DONE
 
-/*22.Напишите функцию, которая принимает в качестве аргумента одну строку (слово). Функция должна возвращать упорядоченный список, содержащий индексы всех заглавных букв в строке. */
+/*21.Напишите функцию, которая принимает в качестве аргумента одну строку (слово). Функция должна возвращать упорядоченный список, содержащий индексы всех заглавных букв в строке. */
 function findTheCapitals(string){
   let arr = string.split('')
   let newArr = []
@@ -380,7 +353,7 @@ function findTheCapitals(string){
 }
 console.log(findTheCapitals("CodEWaRs"));//RESULT = [0, 3, 4, 6] - DONE
 
-/*23.Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+/*22.Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
 Notes
 Array size is at least 1.*/
 function rowWeights(arr){
@@ -399,7 +372,7 @@ function rowWeights(arr){
 console.log(rowWeights([50, 60, 70, 80]));//RESULT =  [120, 140]-DONE
 console.log(rowWeights([13, 27, 49]));//RESULT =  [62, 27] -
 
-/*24.You will be given a number and you will need to return it as a string in Expanded Form. For example:
+/*23.You will be given a number and you will need to return it as a string in Expanded Form. For example:
 expandedForm(12); // Should return '10 + 2'
 expandedForm(42); // Should return '40 + 2'
 expandedForm(70304); // Should return '70000 + 300 + 4'
@@ -585,3 +558,215 @@ function homogenousArrays(arr){
 }
 
 console.log(homogenousArrays([[1, 5, 4], ["a", 3, 5], ["b"], [], ["1", 2, 3]]));
+
+
+//OBJECTS
+/*30.При работе со значениями цвета иногда может быть полезно извлечь отдельные значения красного, зеленого и синего (RGB) компонентов цвета. Реализуйте функцию, отвечающую этим требованиям:
+Принимает в качестве параметра шестнадцатеричную цветовую строку без учета регистра (например, «#FF9933» или «#ff9933»).
+Возвращает Map<String, int> со структурой {r: 255, g: 153, b: 51}, где r, g и b находятся в диапазоне от 0 до 255.
+Примечание. Ваша реализация не обязательно должна поддерживать сокращенную форму шестнадцатеричной записи (т. е. «#FFF»).
+Пример
+"#FF9933" --> {r: 255, g: 153, b: 51} */
+function fullCodeColore(str){
+  //заменить решентку на пустую строку
+  //'^' в регулярном выражении это начало строки
+  str = str.replace(/^#/, "");
+
+  //формат цвета: #RRGGBB
+  let r = parseInt(str.substring(0, 2), 16);
+  let g = parseInt(str.substring(2, 4), 16);
+  let b = parseInt(str.substring(4, 6), 16);
+
+  return { r, g, b };
+}
+let color = "FF9933";
+let rgb = fullCodeColore(color)
+console.log(`r:${rgb.r}, g:${rgb.g}, b:${rgb.b} `);//RESULT = r:255, g:153, b:51 - DONE
+
+/*31.Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+Example: (input --> output)
+
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA" */
+function complementaryDna(str){
+  let arr = str.split('')
+  let newArr =[]
+
+  for(let i =0; i<arr.length; i++){
+    if(arr[i] === 'A'){
+       newArr.push('T')
+    } else if(arr[i] === 'T'){
+       newArr.push("A");
+    } else if(arr[i] === 'C'){
+       newArr.push("G");
+    } else if(arr[i] === 'G'){
+       newArr.push("C");
+    }
+      
+  }
+  return newArr.join('')
+ }
+
+console.log(complementaryDna('ATTGC'));//Result = TAACG - DONE
+console.log(complementaryDna('GTAT'));//Result = CATA - DONE
+
+/*32. Вы работаете на футбольном стадионе низшей лиги, и вам поручили автоматизировать табло.
+Судья выкрикнет счет, у вас уже установлен модуль распознавания голоса, который преобразует голос судьи в строку, но голосовой счет нужно преобразовать в пару для табло!
+например «Счет четыре ноль» должен вернуться [4,0]
+Счет любой команды находится в диапазоне от 0 до 9, и судья не будет каждый раз произносить одну и ту же строку, например:
+"new score: two three"
+  
+"two two"
+  
+"Arsenal just conceded another goal, two nil" */
+
+function convertScore(str){
+  let score ={
+    nil: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4, 
+    five: 5,
+    six: 6, 
+    seven: 7,
+    eight: 8,
+    nine: 9
+  }
+  let arr = str.split(' ')
+  console.log(arr)
+  //вывод двух последних элементов массива
+  let newArr= arr.slice(-2)
+  let newScore =[]
+  for(let word of newArr){
+    //eсли слово есть в объекте score, добавляем его в новый массив
+    if (score[word] !== undefined) {
+      newScore.push(score[word]);
+    }
+  }
+  return newScore
+}
+
+console.log(convertScore("new score: two three"));//Result =[2, 3] - DONE
+console.log(convertScore("two two"));//Result =[2, 2] - DONE
+
+/*33. You have a group chat application, but who is online!?
+You want to show your users which of their friends are online and available to chat!
+Given an input of an array of objects containing usernames, status and time since last activity (in mins), create a function to work out who is online, offline and away.
+If someone is online but their lastActivity was more than 10 minutes ago they are to be considered away.
+The input data has the following structure: 
+The corresponding output should look as follows:
+
+{
+  online: ['David'],
+  offline: ['Lucy'],
+  away: ['Bob']
+}*/
+
+function onlineStatus(users){
+  let result ={
+    online: [],
+    offline: [],
+    away: []
+  }
+
+  for(user of users){
+    if(user.status ==='online' && user.lastActivity >=10){
+      result.online.push(user.username)
+    } else if(user.status ==='online' && user.lastActivity >=10){
+      result.away.push(user.username)
+    } else{
+      result.offline.push(user.username)
+    }
+  }
+  return result
+}
+
+let newUser = [{
+  username: 'David',
+  status: 'online',
+  lastActivity: 10
+}, {
+  username: 'Lucy', 
+  status: 'offline',
+  lastActivity: 22
+}, {
+  username: 'Bob', 
+  status: 'online',
+  lastActivity: 104
+}]
+
+console.log(onlineStatus(newUser))//RESULT = { online:['David', 'Bob], offline: ['Lusy'], away:[] } -DONE
+
+/*34.Цель этого упражнения — преобразовать строку в новую строку, где каждый символ в новой строке равен «(», если этот символ встречается в исходной строке только один раз, или «)», если этот символ встречается в исходной строке более одного раза. нить. Игнорируйте заглавные буквы при определении того, является ли символ дубликатом.
+Пример:
+ "din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" */
+function getDuplicateEncoder(string){
+  //игнорирование регистра по условиям(перевод всех букв в нижний регистр)
+  let lowerCaseString = string.toLowerCase();
+  let out = "";
+  //для отслеживания символов, которые уже встречались в строке.Объект seen в данной функции когда встречается  новый символ в строке, добавляем его в объект seen в качестве ключа, устанавливая его значение в true. Если встречается тот же символ впоследствии, то проверяем объект seen и видим, что ключ (символ) уже существует в нем.
+  let seen = {};
+  for (let i = 0; i < lowerCaseString.length; i++) {
+    let curChar = lowerCaseString[i];
+    //если нет повторяющихся
+    if (seen[curChar]) {
+      out += ")";
+    } 
+    //есть повторяющиеся
+    else {
+      out += "(";
+      seen[curChar] = true;
+    }
+  }
+  return out;
+}
+console.log(getDuplicateEncoder("din"));//RESULT = ((( - DONE
+console.log(getDuplicateEncoder("recede"));//RESULT = ((()() -???
+
+/*35.Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+The four operators are "add", "subtract", "divide", "multiply".
+A few examples:(Input1, Input2, Input3 --> Output)
+
+5, 2, "add"      --> 7
+5, 2, "subtract" --> 3
+5, 2, "multiply" --> 10
+5, 2, "divide"   --> 2.5 */
+
+function doesArithmetic(arr){
+  result = 0
+  if (arr.includes("add")) {
+    result = arr[0] + arr[1];
+  } else if (arr.includes("subtract")) {
+    result = arr[0] - arr[1];
+  } else if (arr.includes("multiply")) {
+    result = arr[0] * arr[1];
+  } else if (arr.includes("divide")) {
+    result = arr[0] / arr[1];
+  }
+
+  return result
+}
+
+console.log(doesArithmetic([5, 2, "add"]));//Result = 7 -DONE
+console.log(doesArithmetic([5, 2, "subtract"]));//Result = 3-DONE
+console.log(doesArithmetic([5, 2, "multiply"]));//Result = 10-DONE
+console.log(doesArithmetic([5, 2, "divide"]));//Result = 2.5-DONE
+
+/*36.Implement a function which takes a sequence of objects and a property name, and returns a sequence containing the named property of each object. */
+function pluck(arr, str){
+  result=[]
+  for( let res of arr){
+    if(Object.keys(res)===str){
+      result.push(Object.values(res))
+    }
+  }
+  return result
+}
+
+console.log(pluck([{a:1}, {a:2}], 'a'))
