@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> 57bdceb33f830644f1b0f4a60d564acf91aa84f0
 //ARRAYS
 /* 1.Вам будет предоставлен список строк. Вы должны отсортировать его в алфавитном порядке (с учетом регистра и на основе значений символов ASCII), а затем вернуть первое значение.Возвращаемое значение должно быть строкой и содержать «***» между каждой буквой.Не следует удалять или добавлять элементы из/в массив.*/
 function sortString(strings){
@@ -934,7 +930,7 @@ const newCube2 = new Cube2 (5)
 console.log(newCube2.surfaceArea)//result =150 - DONE
 
 
-<<<<<<< HEAD
+
 //ARRAYS
 /* 1.Вам будет предоставлен список строк. Вы должны отсортировать его в алфавитном порядке (с учетом регистра и на основе значений символов ASCII), а затем вернуть первое значение.Возвращаемое значение должно быть строкой и содержать «***» между каждой буквой.Не следует удалять или добавлять элементы из/в массив.*/
 function sortString(strings){
@@ -1872,14 +1868,6 @@ let c = new Counter(1)
 console.log(c.incr())//result =1
 console.log(c+1) //result =3
 
-
-
-
-
-
-=======
-
-=======
 //ARRAYS
 /* 1.Вам будет предоставлен список строк. Вы должны отсортировать его в алфавитном порядке (с учетом регистра и на основе значений символов ASCII), а затем вернуть первое значение.Возвращаемое значение должно быть строкой и содержать «***» между каждой буквой.Не следует удалять или добавлять элементы из/в массив.*/
 function sortString(strings){
@@ -1897,8 +1885,8 @@ function sortString(strings){
     console.log(string);  
 };
 
-let string1 = ["banana", "apple", "cherry"];
-sortString(string1);//RESULT = a***p***p***l***e
+let strinG1 = ["banana", "apple", "cherry"];
+sortString(strinG1);//RESULT = a***p***p***l***e
 
 /*2.Завершите метод/функцию, чтобы он преобразовывал слова, разделенные тире/подчеркиванием, в верблюжий регистр. Первое слово в выводе должно быть написано с заглавной буквы, только если исходное слово было написано с заглавной буквы (так называемый верхний регистр Camel, также часто называемый регистром Pascal). Следующие слова всегда должны быть с заглавной буквы. Пример:
  - "the-stealth-warrior" gets converted to "theStealthWarrior"
@@ -1917,10 +1905,10 @@ function convertStringToCamelCase(string){
     console.log(string);    
 }
     
-let string2 = "The_Stealth-Warrior";
-convertStringToCamelCase(string2);
-let string22 = "the-stealth-warrior";
-convertStringToCamelCase(string22);
+let strinG2 = "The_Stealth-Warrior";
+convertStringToCamelCase(strinG2);
+let strinG22 = "the-stealth-warrior";
+convertStringToCamelCase(strinG22);
 
 /*3.В этом небольшом задании вам дается строка чисел, разделенных пробелами, и вы должны вернуть наибольшее и наименьшее число. */
 function highAndLow(string){
@@ -1956,7 +1944,7 @@ sortGivenString("is2 Thi1s T4est 3a");//RESULT = Thi1s is2 3a T4est - DONE
 
 /*5.По городу движется автобус, который на каждой остановке забирает и высаживает несколько человек.Вам предоставляется список (или массив) пар целых чисел. Элементы каждой пары представляют собой количество людей, входящих в автобус (первый элемент) и количество людей, выходящих из автобуса (второй элемент) на остановке.Ваша задача — вернуть количество людей, которые все еще находятся в автобусе после последней остановки (после последнего массива). Несмотря на то, что это последняя автобусная остановка, автобус может быть не пустым, и в автобусе все еще могут быть люди, они, вероятно, там спят :DИмейте в виду, что тестовые примеры гарантируют, что количество людей в автобусе всегда >= 0. Поэтому возвращаемое целое число не может быть отрицательным.
 Второе значение в первой паре массива равно 0, поскольку на первой остановке автобус пуст. */
-let people = [
+let peoplE = [
   [3, 0],
   [9, 1],
   [4, 10],
@@ -1964,17 +1952,17 @@ let people = [
   [6, 1],
   [7, 10],
 ];
-function stopBus(people){
+function stopBus(peoplE){
     let lostPeople = 0;
     let sumF =0;
     let sumS = 0;
-    for(let i =0; i<people.length; i++){
-      for(let k=0; k<people[i].length; k++){
-        if (people[i][k] === people[i][0]) {
-          sumF += people[i][k];
+    for(let i =0; i<peoplE.length; i++){
+      for(let k=0; k<peoplE[i].length; k++){
+        if (peoplE[i][k] === peoplE[i][0]) {
+          sumF += peoplE[i][k];
         }
-        if (people[i][k] === people[i][1]) {
-          sumS += people[i][k];
+        if (people[i][k] === peoplE[i][1]) {
+          sumS += peoplE[i][k];
         }
       }
     }
@@ -2153,19 +2141,19 @@ console.log(filterList([1, "a", "b", 0, 15]));//RESULT = [1, 0, 15]- DONE
 console.log(filterList([1, 2, "aasf", "1", "123", 123]));//RESULT = [1, 2, 123] - DONE
 
 /*18.Я дам вам целое число. Верните мне фигуру такой же длины и ширины, как целое число. Целое число будет целым числом от 1 до 50.*/
-let out = document.querySelector('.out')
-function getBuildSquad(num){
-  for (i = 1; i <= num; i++) {
-    out.innerHTML +="<br>";
-      for(k=1;k<=num;k++){
-        out.innerHTML += "+";
-      }    
-  }
-  return out;
-}
+// let outIn = document.querySelector('.out')
+// function getBuildSquad(num){
+//   for (i = 1; i <= num; i++) {
+//     outIn.innerHTML +="<br>";
+//       for(k=1;k<=num;k++){
+//         outIn.innerHTML += "+";
+//       }    
+//   }
+//   return outIn;
+// }
 
-console.log(getBuildSquad(5));// - DONE
-console.log(getBuildSquad(10));// - DONE
+// console.log(getBuildSquad(5));// - DONE
+// console.log(getBuildSquad(10));// - DONE
 
 /*19.Возвращает количество гласных в заданной строке.Гласными для этой Ката мы будем считать a, e, i, o, u (но не y).Входная строка будет состоять только из строчных букв и/или пробелов.*/
 function vowelCount(string){
@@ -2184,8 +2172,8 @@ function vowelCount(string){
   return newString;
 }
 
-let string11 ='hello world'
-console.log(vowelCount(string11));//RESULT = 3 - DONE
+let string118 ='hello world'
+console.log(vowelCount(string118));//RESULT = 3 - DONE
 
 /*20.Ваша цель в этом ката — реализовать функцию разности, которая вычитает один список из другого и возвращает результат.Он должен удалить все значения из списка a, которые присутствуют в списке b, сохраняя их порядок.*/
 function getArrayDiff(arr1, arr2){
@@ -2296,8 +2284,8 @@ function sugarBox(num){
   return box
 }
 
-const box = sugarBox(7);
-console.log(box);
+const boX = sugarBox(7);
+console.log(boX);
 
 /*26.Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9) и возвращает строку этих чисел в виде номера телефона. Чтобы выполнить эту задачу, возвращаемый формат должен быть правильным.
 Не забудьте пробел после закрывающих скобок */
@@ -2392,9 +2380,9 @@ function fullCodeColore(str){
   return { r, g, b };
 }
 
-let color = "FF9933";
-let rgb = fullCodeColore(color)
-console.log(`r:${rgb.r}, g:${rgb.g}, b:${rgb.b} `);//RESULT = r:255, g:153, b:51 - DONE
+let coloR = "FF9933";
+let rgB = fullCodeColore(coloR)
+console.log(`r:${rgB.r}, g:${rgB.g}, b:${rgB.b} `);//RESULT = r:255, g:153, b:51 - DONE
 
 /*31.Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
 In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
@@ -2482,7 +2470,7 @@ function onlineStatus(users){
   return result
 }
 
-let newUser = [{
+let newUsers = [{
   username: 'David',
   status: 'online',
   lastActivity: 10
@@ -2496,7 +2484,7 @@ let newUser = [{
   lastActivity: 104
 }]
 
-console.log(onlineStatus(newUser))//RESULT = { online:['David', 'Bob], offline: ['Lusy'], away:[] } -DONE
+console.log(onlineStatus(newUsers))//RESULT = { online:['David', 'Bob], offline: ['Lusy'], away:[] } -DONE
 
 /*34.Цель этого упражнения — преобразовать строку в новую строку, где каждый символ в новой строке равен «(», если этот символ встречается в исходной строке только один раз, или «)», если этот символ встречается в исходной строке более одного раза. нить. Игнорируйте заглавные буквы при определении того, является ли символ дубликатом.
 Пример:
@@ -2625,7 +2613,7 @@ console.log(languageSkills({ "C++": 50, ASM: 10, Haskell: 20 }));//Result =[] - 
 /*40.You're going on a trip with some students and it's up to you to keep track of how much money each Student has. A student is defined like this:
 As you can tell, each Student has some fives, tens, and twenties. Your job is to return the name of the student with the most money. If every student has the same amount, then return "all".
 Notes:Each student will have a unique name.There will always be a clear winner: either one person has the most, or everyone has the same amount.If there is only one student, then that student has the most money */
-class Student {
+class Student8 {
   constructor(name, fives, tens, twenties) {
     this.name = name;
     this.fives = fives;
@@ -2657,16 +2645,16 @@ for(let i =0; i<students.length; i++){
 return 'all'
 }
 
-const student1 = new Student("Alice", 2, 3, 4);
-const student2 = new Student("Bob", 2, 3, 4);
-const student3 = new Student("Charlie", 2, 3, 4);
-const students = [student1, student2, student3];
+const studentOne = new Student8("Alice", 2, 3, 4);
+const studentTwo = new Student8("Bob", 2, 3, 4);
+const studentThree = new Student8("Charlie", 2, 3, 4);
+const studentsAll1 = [studentOne, studentTwo, studentThree];
 
-const richestStudentName = findRichestStudent(students);
-console.log(richestStudentName);
+const richestStudentName11 = findRichestStudent(studentsAll1);
+console.log(richestStudentName11);
 
 /*41.Modify Class so that Subclass.foo will work correctly. This should also work for any level of inheritance from Class, e.g. with: */
-class Class {
+class ClassOne {
     static foo = 42
 
   static getFoo() {
@@ -2674,15 +2662,15 @@ class Class {
   }
 }
 
-class Subclass extends Class {}
-class Deepclass extends Subclass {}
+class SubclassOne extends ClassOne {}
+class DeepclassOne extends SubclassOne {}
  
-console.log(Class.getFoo())
-console.log(Subclass.getFoo())
-console.log(Deepclass.getFoo())
+console.log(ClassOne.getFoo())
+console.log(SubclassOne.getFoo())
+console.log(DeepclassOne.getFoo())
 
 /* 41. The following code could use a bit of object-oriented artistry. While it's a simple method and works just fine as it is, in a larger system it's best to organize methods into classes/objects. (Or, at least, something similar depending on your language). Refactor the following code so that it belongs to a Person class/object. Each Person instance will have a greet method. The Person instance should be instantiated with a name so that it no longer has to be passed into each greet method call.*/
- class Person{
+ class PersonOne{
   constructor(name){
     this.name = name
   }
@@ -2691,11 +2679,11 @@ console.log(Deepclass.getFoo())
   }
  }
 
-let  joe = new Person('Joe');
- joe.greet('Kate'); // 'Hello Kate, my name is Joe'
+let  joe11 = new PersonOne('Joe');
+ joe11.greet('Kate'); // 'Hello Kate, my name is Joe'
 
 /*43.Write a class Block that creates a block (Duh..).Requirements.The constructor should take an array as an argument, this will contain 3 integers of the form [width, length, height] from which the Block should be created. */
-class Block{
+class BlockOne{
   constructor([Width, Length, Height]){
     this.Width = Width,
     this.Length =Length,
@@ -2708,15 +2696,15 @@ class Block{
   getSurfaceArea(){return 2 * (this.Width * this.Length + this.Length * this.Height + this.Height * this.Width)}
 }
 
-let b = new Block([2,4,6]);
-console.log(b.getWidth()) // 2
-console.log(b.getLength()) // 4
-console.log(b.getHeight()) // 6
-console.log(b.getVolume()) //48
-console.log(b.getSurfaceArea())//88
+let b11 = new BlockOne([2,4,6]);
+console.log(b11.getWidth()) // 2
+console.log(b11.getLength()) // 4
+console.log(b11.getHeight()) // 6
+console.log(b11.getVolume()) //48
+console.log(b11.getSurfaceArea())//88
 
 //44.This kata is about static method that should return different values.On the first call it must be 1, on the second and others - it must be a double from previous value.Look tests for more examples, good luck :)
-class Double{
+class DoubleOne{
   constructor(num){
     this.num = 1
   }
@@ -2725,10 +2713,10 @@ class Double{
   }
 }
 
-let n = new Double();
-console.log(n.nextCall())//1
-console.log(n.nextCall())//2
-console.log(n.nextCall())//3
+let n11 = new DoubleOne();
+console.log(n11.nextCall())//1
+console.log(n11.nextCall())//2
+console.log(n11.nextCall())//3
 
 //45.The toString() method has been disabled for booleans, numbers, arrays and objects. Your goal is to retrive toString() for the following data types.
 Boolean.prototype.returned = function(){
@@ -2741,10 +2729,10 @@ Array.prototype.returned = function(){
   return this.toString()
 }
 
-let newValue = true;
-console.log(newValue.returned())// 'true'
-let nu111 = 11
-console.log(nu111.returned()) // '11'
+let newValue11 = true;
+console.log(newValue11.returned())// 'true'
+let nu11111 = 11
+console.log(nu11111.returned()) // '11'
 
 /*46.You are the judge at a competitive eating competition and you need to choose a winner!There are three foods at the competition and each type of food is worth a different amount of points. Points are as follows:Chickenwings: 5 points.Hamburgers: 3 points.Hotdogs: 2 points.Write a function that helps you create a scoreboard. It takes as a parameter a list of objects representing the participants, for example:
 [
@@ -2758,15 +2746,49 @@ function scoreboard(orders){
   })).sort((a,b) => a.score - a.score || a.name >b.name);
 }
 
-let arr1213 = [
+let arr121311 = [
   {name: "Habanero Hillary", chickenwings: 5 , hamburgers: 17, hotdogs: 11},
   {name: "Big Bob" , chickenwings: 20, hamburgers: 4, hotdogs: 11}
 ]
-console.log(scoreboard(arr1213))
+console.log(scoreboard(arr121311))
 
+/*47.You're modelling the interaction between a large number of quarks and have decided to create a Quark class so you can generate your own quark objects.Quarks are fundamental particles and the only fundamental particle to experience all four fundamental forces.Your task:Your Quark class should allow you to create quarks of any valid color ("red", "blue", and "green") and any valid flavor ('up', 'down', 'strange', 'charm', 'top', and 'bottom').Every quark has the same baryon_number (BaryonNumber in C#): 1/3.Every quark should have an .interact() (.Interact() in C#) method that allows any quark to interact with another quark via the strong force. When two quarks interact they exchange colors. */
 
+class Quark {
+  constructor(color, flavor){
+    this.color = color;
+    this.flavor = flavor;  
+  }
 
+  baryon_number (){
+    return 1/3;
+  }
 
+  Interact(anotherQuark){
+    const acceptebleColors =['red', 'green', 'blue']
+    const acceptebleFlavors =['up', 'down', 'strange', 'charm', 'top',  'bottom']
+   
+    if(!acceptebleColors.includes(this.color) || !acceptebleFlavors.includes(this.flavor)){
+      return console.log('Error')
+    }
+    //хранение текущего цвета
+    let currentColor = this.color;
+    //цвет 1го менять на цвет 2го
+    this.color = anotherQuark.color;
+    //обмен цветами
+    anotherQuark.color = currentColor;
+    console.log (`Colors exchanged between ${this.getColorFlavor()} and ${anotherQuark.getColorFlavor()}`)
+  }
+  
+  getColorFlavor() {
+    return `${this.color} ${this.flavor}`;
+  }
+}
 
->>>>>>> 845435ad6aa313ae976966095930b89cfc20e14b
->>>>>>> 57bdceb33f830644f1b0f4a60d564acf91aa84f0
+const quark1 = new Quark('red', 'up');
+const quark2 = new Quark('blue', 'down');
+
+console.log(quark1.baryon_number()); // 0.3333333333333333
+console.log(quark1.getColorFlavor()); // 'red up'
+console.log(quark2.getColorFlavor());//blue down
+
